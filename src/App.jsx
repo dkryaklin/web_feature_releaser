@@ -37,7 +37,7 @@ const FeatureCard = ({ feature }) => {
         <div className={classNames('builds', {'--hidden': !builds.length})}>
           Builds:
           {builds.map(build => (
-            <div className="build-wrapper">
+            <div key={build.jobName} className="build-wrapper">
               {build.appLink ? <div className={classNames('build')} style={{order: 0}}><a rel="noopener noreferrer" target="_blank" href={build.appLink}>App link</a></div> : null}
               {build.crxLink ? <div className={classNames('build')} style={{order: 1}}><a rel="noopener noreferrer" target="_blank" href={build.crxLink}>Crx link</a></div> : null}
               <div className={classNames('build')}>
