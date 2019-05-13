@@ -1,0 +1,68 @@
+.app {
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__card {
+    min-width: 275px;
+    flex-shrink: 0;
+    margin: 20px;
+    order: 1;
+    opacity: 1;
+    transition: 0.2s opacity;
+    cursor: pointer;
+    font-size: 14px;
+
+    &.done {
+      order: 2;
+      opacity: 0.1;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__header {
+    font-weight: 600;
+    font-size: 16px;
+
+    .done & span {
+      color: green;
+    }
+  }
+
+  &__tickets, &__builds {
+    margin-top: 10px;
+
+    &.--hidden {
+      display: none;
+    }
+  }
+
+  &__ticket {
+    margin-left: 10px;
+
+    &.--open {
+      & span {
+        color: yellow;
+      }
+    }
+
+    &.--closed {
+      & span {
+        color: green;
+      }
+    }
+  }
+
+  &__build-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__build {
+    margin-left: 10px;
+    order: 3;
+  }
+}
